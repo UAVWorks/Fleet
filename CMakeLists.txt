@@ -5,6 +5,10 @@ cmake_policy(VERSION 3.4.1)
 # Project
 project(Fleet)
 
+# CMake modules
+include(cmake/RecurseSubdirs.cmake)
+include(cmake/TrToQrc.cmake)
+
 # Versions
 set(VERSION_MAJOR 0)
 set(VERSION_MINOR 0)
