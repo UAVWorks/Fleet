@@ -1,12 +1,16 @@
 #ifndef GUI_STYLE_MANAGER_H
 #define GUI_STYLE_MANAGER_H
 
-// Internal
-#include "sizings.h"
+// Qt
+#include <QObject>
+
+class QQmlContext;
 
 namespace presentation
 {
-    class GuiStyleManager: public QObject
+    class Sizings;
+
+    class GuiStyleManager: public QObject // TODO: rename
     {
         Q_OBJECT
 
@@ -17,7 +21,7 @@ namespace presentation
             Day
         };
 
-        explicit GuiStyleManager(QObject* parent = nullptr);
+        explicit GuiStyleManager(QQmlContext* context, QObject* parent = nullptr);
 
     public slots:
         void setPaletteStyle(PaletteStyle paletteStyle);
@@ -28,6 +32,8 @@ namespace presentation
         void loadSettingsSizings();
 
     private:
+        QQmlContext* const m_context;
+
         Q_ENUM(PaletteStyle)
     };
 }

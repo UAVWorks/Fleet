@@ -42,6 +42,7 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/result)
 
 # Instruct CMake to run moc and rcc automatically when needed.
 set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTORCC ON)
 # Find includes in corresponding build directories
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
@@ -53,6 +54,7 @@ add_compile_options(-Wall -fPIC)
 include(2ndparty/industrial-controls/CMakeLists.txt)
 
 # Targets
+set(CORE core)
 add_subdirectory(core)
 #add_subdirectory(plugins)
 add_subdirectory(app)

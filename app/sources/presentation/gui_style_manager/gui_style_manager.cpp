@@ -7,12 +7,15 @@
 // Internal
 //#include "settings_provider.h"
 
+#include "sizings.h"
 #include "day_palette_factory.h"
 #include "night_palette_factory.h"
 
 using namespace presentation;
 
-GuiStyleManager::GuiStyleManager(QObject* parent): QObject(parent)
+GuiStyleManager::GuiStyleManager(QQmlContext* context, QObject* parent):
+    QObject(parent),
+    m_context(context)
 {}
 
 void GuiStyleManager::setPaletteStyle(PaletteStyle paletteStyle)
@@ -30,10 +33,7 @@ void GuiStyleManager::setPaletteStyle(PaletteStyle paletteStyle)
         break;
     }
 
-//    if (!factory) return;
-
-//    presentationContext->rootContext()->setContextProperty(
-//                "customPalette", QVariant::fromValue(factory->create()));
+    if (factory) m_context->setContextProperty("customPalette", QVariant::fromValue(factory->create()));
 }
 
 void GuiStyleManager::loadSettingsPalette()
@@ -43,7 +43,7 @@ void GuiStyleManager::loadSettingsPalette()
 
 void GuiStyleManager::setSizings(const Sizings& sizings)
 {
-//    presentationContext->rootContext()->setContextProperty("sizings", QVariant::fromValue(sizings));
+    m_context->setContextProperty("sizings", QVariant::fromValue(sizings));
 }
 
 void GuiStyleManager::setSizings(int controlBaseSize)

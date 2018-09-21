@@ -2,7 +2,7 @@
 cmake_minimum_required(VERSION 3.2.1)
 
 # Project
-project(core)
+project(${CORE})
 
 # Version message
 message(STATUS "Configuring ${PROJECT_NAME}")

@@ -7,7 +7,7 @@
 #include <QDebug>
 
 // Internal
-#include "gui_style_manager.h"
+#include "qml_main_presenter.h"
 
 int main(int argc, char* argv[])
 {
@@ -35,11 +35,8 @@ int main(int argc, char* argv[])
     app.setFont(QFont("OpenSans"));
     app.setWindowIcon(QIcon(":/icons/fleet.svg"));
 
-    // TODO: start presenter
-
-    presentation::GuiStyleManager guiStyleManager;
-    guiStyleManager.loadSettingsPalette();
-    guiStyleManager.loadSettingsSizings();
+    presentation::QmlMainPresenter presenter;
+    presenter.start();
 
     return app.exec();
 }

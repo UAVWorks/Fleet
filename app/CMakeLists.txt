@@ -45,7 +45,7 @@ tr_to_qrc("${CMAKE_CURRENT_BINARY_DIR}/app_ts.qrc")
 target_sources(${PROJECT_NAME} PRIVATE ${QRC_FILES})
 
 # QML compile resources
-file(GLOB_RECURSE QRC_QML_FILES "sources/presentation/qml/*.qrc")
+file(GLOB_RECURSE QRC_QML_FILES "sources/qml/*.qrc")
 #qtquick_compiler_add_resources(QRC_QML_SOURCES ${QRC_QML_FILES})
 target_sources(${PROJECT_NAME} PRIVATE ${QRC_QML_FILES})
 
