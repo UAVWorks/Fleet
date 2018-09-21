@@ -49,10 +49,13 @@ set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_CXX_STANDARD 14)
 add_compile_options(-Wall -fPIC)
 
+# 2ndparty libraries
+include(2ndparty/industrial-controls/CMakeLists.txt)
+
 # Targets
 add_subdirectory(core)
 #add_subdirectory(plugins)
-#add_subdirectory(app)
+add_subdirectory(app)
 
 # Tests
 option(WITH_TESTS "Enable tests")
