@@ -1,0 +1,3 @@
+[submodule "2ndparty/industrial-controls"]
+	path = 2ndparty/industrial-controls
+	url = https://github.com/DigitalAero/industrial-controls.git
